@@ -2,7 +2,7 @@ name: Daily AI & Tech News Bot
 
 on:
   schedule:
-    - cron: '0 8 * * *' # Runs everyday at 8:00 AM UTC
+    - cron: '30 2 * * *' # Runs everyday at 2:30 AM UTC, which is exactly 8:00 AM IST (Indian Standard Time)
   workflow_dispatch: # Allows manual trigger from GitHub UI
 
 jobs:
@@ -37,6 +37,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git mad reports/ || true
           git add reports/
           git commit -m "chore: add beautiful HTML tech news report for $(date +%Y-%m-%d)" || exit 0
           git push
