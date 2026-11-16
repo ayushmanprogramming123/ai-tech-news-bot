@@ -38,5 +38,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add reports/
-          git commit -m "chore: add daily AI & tech news report for $(date +%Y-%m-%d)" || exit 0
+          git commit -m "chore: add beautiful HTML tech news report for $(date +%Y-%m-%d)" || exit 0
           git push
